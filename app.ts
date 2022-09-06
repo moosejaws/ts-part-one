@@ -1,20 +1,15 @@
-enum Role {admin, read_only, author}
-
-const person = {
-
-    name: "reina",
-    age: 26,
-    hobbies: ["hiking", "skiing", "reading", "chess"],
-    role: Role.admin
-
+function add(n1: number, n2: number) {
+    return n1 + n2
 }
 
-console.log(person.name)
-
-for (const hobby of person.hobbies) {
-    console.log(hobby);
+function printResult(num: number): void {
+    console.log('Result: ' + num);
 }
 
-if (person.role === Role.admin) {
-    console.log("is admin")
-}
+printResult(add(5, 12));
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+
+console.log(combineValues(8, 8));
